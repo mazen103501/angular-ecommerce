@@ -1,0 +1,25 @@
+<div class="section">
+  <h1 class="is-size-4">Products List</h1>
+  <div class="section columns is-multiline" >
+    <app-product class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd" title={{textEllipsis(item.title,60)}} src={{item.image}} description={{textEllipsis(item.description,80)}} price={{item.price}} id={{item.id}} key={{item.key}} *ngFor="let item of productsList"></app-product>
+  </div>
+</div>
+
+
+
+<!-- <div class="card-image">
+  <figure class="image is-4by3">
+    <img [src]="item.image" alt="Placeholder image">
+  </figure>
+</div>
+<div class="card-content">
+  <div class="media">
+    <div class="media-content">
+      <p class="title is-6">{{item.title}}</p>
+    </div>
+  </div>
+  <div class="content">
+    {{textEllipsis(item.description)}}
+  </div>
+</div>
+<p class="subtitle is-6 has-background-primary px-1 py-1 has-text-white has-text-centered">{{item.price}} $</p> -->

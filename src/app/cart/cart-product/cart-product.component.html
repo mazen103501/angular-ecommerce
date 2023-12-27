@@ -1,0 +1,23 @@
+<div class="columns box p-2 my-4">
+  <div class="is-flex is-justify-content-center column is-4">
+    <figure>
+      <img [src]="product.image">
+    </figure>
+  </div>
+  <div class="column is-flex is-flex-direction-column is-justify-content-center">
+    <div>
+      <p class="title is-5">{{product.title}}</p>
+      <p>{{product.description}}</p>
+    </div>
+    <div class="amount-control is-flex is-align-items-center px-6 is-justify-content-space-between has-text-white">
+      <div class="mt-4 py-2 px-4 has-background-info ">
+        <p>{{product.price}} $</p>
+      </div>
+      <div class="is-flex is-align-items-center is-justify-content-center px-3 py-2 mt-5 has-background-primary ">
+        <button (click)="decrease()" class="button py-0">-</button>
+        <p class="p-2 ">{{amount}}</p>
+        <button (click)="increase()" class="button py-0">+</button>
+      </div>
+    </div>
+  </div>
+</div>

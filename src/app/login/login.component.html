@@ -1,0 +1,46 @@
+<section class="section">
+  <form class="message container is-dark pb-5 " *ngIf="mode" [formGroup]="loginForm" (ngSubmit)="onSubmit(true)">
+    <h1 class="message-header is-size-5 ">Login</h1>
+    <div class="field p-4 mb-0">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input pl-3" type="email" placeholder="Email" formControlName="email">
+      </div>
+    </div>
+    <div class="field px-4 py-2">
+      <label class="label">Password</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input pl-3" type="password" placeholder="Password" formControlName="password">
+      </div>
+    </div>
+    <div class="m-4 is-size-6 has-text-danger" *ngIf="errorMessage">
+      <span>{{errorMessage}}</span>
+    </div>
+    <div class="ml-4">
+      <button class="button is-success" type="submit" [ngClass]="{'is-loading':loading}">Login</button><br>
+      <a class="is-size-7" (click)="changeMode()">Dont have Account?</a>
+    </div>
+  </form>
+  <form class="message container is-dark pb-5" *ngIf="!mode" [formGroup]="signupForm" (ngSubmit)="onSubmit(false)">
+    <h1 class="message-header is-size-5 ">Register</h1>
+    <div class="field p-4 mb-0">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input pl-3" type="email" placeholder="Email" formControlName="email">
+      </div>
+    </div>
+    <div class="field px-4 py-2">
+      <label class="label">Password</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input pl-3" type="password" placeholder="Password" formControlName="password">
+      </div>
+    </div>
+    <div class="m-4 is-size-6 has-text-danger" *ngIf="errorMessage">
+      <span>{{errorMessage}}</span>
+    </div>
+    <div class="ml-4">
+      <button class="button is-success" type="submit" [ngClass]="{'is-loading':loading}">Register</button><br>
+      <a class="is-size-7" (click)="changeMode()">Already Registred?</a>
+    </div>
+  </form>
+</section>

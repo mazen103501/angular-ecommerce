@@ -1,0 +1,23 @@
+
+<div class="section is-flex is-justify-content-center">
+  <div class="columns is-multiline">
+    <div class="column is-flex is-justify-content-center is-5 is-11-tablet is-5-desktop box">
+      <img src={{product.image}}>
+    </div>
+    <div class="info column is-4 is-11-tablet is-5-desktop box p-6 is-flex is-flex-direction-column is-justify-content-space-between is-desktop is-multiline">
+      <div class="is-tablet is-4">
+        <div class="columns m-0">
+          <p class="title column is-size-5">{{product.title}}</p>
+          <p class="is-size-5 column">Rate - {{product.rating?.rate}}</p>
+        </div>
+        <div class="is-size-6">
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+      <div class="button-cont mt-5 is-flex columns is-multiline is-variable is-2">
+        <p class="has-background-link column has-text-centered has-text-white px-4 py-2 is-size-6 box is-12-mobile is-5-tablet">${{product.price}}</p>
+        <button (click)="addToCart()" class="button is-primary is-size-6  column px-2 py-1 is-12-mobile is-5-tablet is-mobile-mx-1">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

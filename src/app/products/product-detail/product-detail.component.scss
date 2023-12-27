@@ -1,0 +1,22 @@
+.section{
+  &>div{
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+img{
+  width: 20rem;
+}
+.columns > div{
+  margin: 30px;
+}
+.info{
+  height: fit-content;
+}
+.button-cont{
+  @media (min-width:768px){
+    &> button{
+      margin-left: 10px;
+    }
+  }
+}

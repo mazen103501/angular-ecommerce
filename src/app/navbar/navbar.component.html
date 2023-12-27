@@ -1,0 +1,50 @@
+<nav class="navbar" role="navigation" aria-label="main navigation" tabindex="0" (blur)="navBlur()">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <figure class="image logo">
+        <img src="https://ngrx.io/assets/images/badge.svg" alt="Logo">
+      </figure>
+    </a>
+    <div class="mt-2 ml-auto is-hidden-desktop" *ngIf="isLoggedIn">
+      <div class="buttons">
+        <a class="button is-primary" routerLink="/cart">
+          Cart
+          <p class="ml-1 px-1 py-0 box has-background-link has-text-white">{{cartItemsCounter}}</p>
+        </a>
+      </div>
+    </div>
+    <a role="button" class="navbar-burger ml-2" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"  (click)="changeNavBarMode()" *ngIf="isLoggedIn">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active':navOpen}"  *ngIf="isLoggedIn"  >
+    <div class="navbar-start ml-6">
+      <a class="navbar-item" routerLink="/">
+        Home
+      </a>
+      <a class="navbar-item" routerLink="/products">
+        Products
+      </a>
+    </div>
+    <div class="navbar-end">
+      <div class="mt-2 ml-auto is-hidden-touch">
+        <div class="buttons">
+          <a class="button is-primary" routerLink="/cart">
+            Cart
+            <p class="ml-1 px-1 py-0 box has-background-link has-text-white">{{cartItemsCounter}}</p>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="buttons" >
+          <a class="button is-danger ml-6" (click)="logout()">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

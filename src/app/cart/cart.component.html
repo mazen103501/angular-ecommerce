@@ -1,0 +1,11 @@
+<div class="section">
+  <div class="is-flex is-justify-content-space-between">
+    <h2 class="is-size-3 px-3 mb-5">cart</h2>
+    <div class="box has-background-primary has-text-white">
+      <p>Total Price : {{totalPrice}} $</p>
+    </div>
+  </div>
+  <div>
+    <app-cart-product class="" [product]="item" *ngFor="let item of cartItems"></app-cart-product>
+  </div>
+</div>
